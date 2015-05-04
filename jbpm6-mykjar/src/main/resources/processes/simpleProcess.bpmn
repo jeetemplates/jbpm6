@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bpmn:definitions targetNamespace="http://www.omg.org/spec/BPMN/20100524/MODEL" expressionLanguage="http://www.w3.org/1999/XPath" typeLanguage="http://www.w3.org/2001/XMLSchema" exporter="jBPMN NB" exporterVersion="0.3" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL http://www.omg.org/spec/BPMN/2.0/20100501/BPMN20.xsd" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:jbpmn="http://jbpmn.java.net" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bpmn:itemDefinition structureRef="java.lang.String" isCollection="false" itemKind="Information" id="java.lang.String"/>
+    <bpmn:message name="parameter" itemRef="java.lang.String" id="_139874821069847"/>
+    <bpmn:message name="result" itemRef="java.lang.String" id="_139874821536849"/>
+    <bpmn:interface name="com.jeetemplates.jbpm.application.task.MyServiceTask" implementationRef="com.jeetemplates.jbpm.application.task.MyServiceTask" id="_139874822987750">
+        <bpmn:operation name="myOperation" implementationRef="myOperation" id="_139874825732151">
+            <bpmn:inMessageRef>_139874821069847</bpmn:inMessageRef>
+            <bpmn:outMessageRef>_139874821536849</bpmn:outMessageRef>
+        </bpmn:operation>
+    </bpmn:interface>
+    <bpmn:process isClosed="false" name="simpleProcess" id="simpleProcess">
+        <bpmn:serviceTask implementation="Java" operationRef="_139874825732151" isForCompensation="false" startQuantity="1" completionQuantity="1" name="Service Task" id="_1398748181424">
+            <bpmn:extensionElements>
+                <jbpmn:ShapeDesign>{"outer":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(226,232,236)"},"border":{"color":"RGB(108,142,183)","width":2.5}},"inner":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(255,248,159)"},"border":{"color":"RGB(30,69,123)","width":1.0}}}</jbpmn:ShapeDesign>
+            </bpmn:extensionElements>
+            <bpmn:incoming>_1398748191302</bpmn:incoming>
+            <bpmn:outgoing>_1398748193093</bpmn:outgoing>
+        </bpmn:serviceTask>
+        <bpmn:startEvent isInterrupting="true" parallelMultiple="false" id="_1398748185313">
+            <bpmn:extensionElements>
+                <jbpmn:ShapeDesign>{"outer":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(226,232,236)"},"border":{"color":"RGB(108,142,183)","width":1.0}},"inner":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(255,248,159)"},"border":{"color":"RGB(30,69,123)","width":1.0}}}</jbpmn:ShapeDesign>
+            </bpmn:extensionElements>
+            <bpmn:outgoing>_1398748191302</bpmn:outgoing>
+        </bpmn:startEvent>
+        <bpmn:endEvent id="_1398748188938">
+            <bpmn:extensionElements>
+                <jbpmn:ShapeDesign>{"outer":{"background":{"startColor":"RGB(255,255,255)","endColor":"RGB(226,232,236)"},"border":{"color":"RGB(108,142,183)","width":3.0}},"inner":{"background":{"startColor":"RGB(30,69,123)","endColor":"RGB(30,69,123)"},"border":{"color":"RGB(30,69,123)","width":1.4}}}</jbpmn:ShapeDesign>
+            </bpmn:extensionElements>
+            <bpmn:incoming>_1398748193093</bpmn:incoming>
+        </bpmn:endEvent>
+        <bpmn:sequenceFlow sourceRef="_1398748185313" targetRef="_1398748181424" id="_1398748191302"/>
+        <bpmn:sequenceFlow sourceRef="_1398748181424" targetRef="_1398748188938" id="_1398748193093"/>
+    </bpmn:process>
+    <bpmndi:BPMNDiagram id="_13989661509555">
+        <bpmndi:BPMNPlane id="_13989661509556">
+            <bpmndi:BPMNShape bpmnElement="_1398748181424" id="_1398748181424_gui">
+                <omgdc:Bounds x="334.0" y="214.0" width="80.0" height="64.0"/>
+                <bpmndi:BPMNLabel>
+                    <omgdc:Bounds x="337.0" y="286.0" width="72.0" height="19.0"/>
+                </bpmndi:BPMNLabel>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="_1398748185313" id="_1398748185313_gui">
+                <omgdc:Bounds x="128.0" y="225.0" width="42.0" height="42.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="_1398748188938" id="_1398748188938_gui">
+                <omgdc:Bounds x="528.0" y="222.0" width="42.0" height="42.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="_1398748191302" id="_1398748191302_gui">
+                <omgdi:waypoint x="170.0" y="246.0"/>
+                <omgdi:waypoint x="335.0" y="246.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="_1398748193093" id="_1398748193093_gui">
+                <omgdi:waypoint x="413.0" y="244.0"/>
+                <omgdi:waypoint x="529.0" y="244.0"/>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</bpmn:definitions>
